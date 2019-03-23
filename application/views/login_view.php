@@ -11,7 +11,7 @@
 				<!-- Breadcrumbs -->
 				<nav id="breadcrumbs" class="dark">
 					<ul>
-						<li><a href="#">Home</a></li>
+						<li><a href="<?php echo base_url(); ?>">Home</a></li>
 						<li>Log In</li>
 					</ul>
 				</nav>
@@ -32,7 +32,7 @@
 			<div class="login-register-page">
 				<!-- Welcome Text -->
 				<div class="welcome-text">
-					<h3>We're glad to see you again!</h3>
+					<h3>Please login </h3>
 					<span>Don't have an account? <a href="<?php echo base_url(); ?>register">Sign Up!</a></span>
 					<?php
 						if($this->session->flashdata('notification')) {

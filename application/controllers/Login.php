@@ -5,8 +5,8 @@ class Login extends MY_Controller {
 
 	public function index()
 	{
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|min_length[5]|max_length[50]');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[10]|max_length[15]');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|min_length[10]|max_length[50]');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[15]');
 
 		if ($this->form_validation->run() == FALSE)
 		{

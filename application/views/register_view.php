@@ -11,11 +11,10 @@
 				<!-- Breadcrumbs -->
 				<nav id="breadcrumbs" class="dark">
 					<ul>
-						<li><a href="#">Home</a></li>
+						<li><a href="<?php echo base_url(); ?>">Home</a></li>
 						<li>Sign Up</li>
 					</ul>
 				</nav>
-
 			</div>
 		</div>
 	</div>

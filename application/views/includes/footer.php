@@ -94,8 +94,8 @@
 					<div class="footer-links">
 						<h3>Account</h3>
 						<ul>
-							<li><a href="#"><span>Log In</span></a></li>
-							<li><a href="#"><span>Register</span></a></li>
+							<li><a href="<?php echo base_url(); ?>login"><span>Log In</span></a></li>
+							<li><a href="<?php echo base_url(); ?>register"><span>Register</span></a></li>
 						</ul>
 					</div>
 				</div>

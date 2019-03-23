@@ -26,7 +26,7 @@
 						<li><a href="#">Case Studies</a>
 						</li>
 
-						<li><a href="<?php echo base_url(); ?>about">About Us</a>
+						<li><a href="<?php echo base_url(); ?>">About Us</a>
 						</li>
 
 						<li><a href="#">Careers</a>
