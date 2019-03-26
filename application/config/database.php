@@ -8,7 +8,7 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 <<<<<<< HEAD
-	'username' => 'epit0001',
+	'username' => 'root',
 	'password' => 'Rica8442',
 =======
 	'username' => 'root',
