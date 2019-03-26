@@ -7,9 +7,18 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
+<<<<<<< HEAD
 	'username' => 'epit0001',
 	'password' => 'Rica8442',
+=======
+	'username' => 'root',
+	'password' => '',
+<<<<<<< HEAD
+	'database' => 'fyp',
+=======
+>>>>>>> bb335b11368faccdd84be5a7a6b599168c508c57
 	'database' => 'mario',
+>>>>>>> FirstB
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
