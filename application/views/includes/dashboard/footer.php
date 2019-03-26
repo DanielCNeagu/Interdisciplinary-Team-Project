@@ -67,7 +67,7 @@
 		<div class="popup-tabs-container">
 			<div class="popup-tab-content" id="chat">
 				<div class="welcome-text">
-					<h3 style="color:white;">Chat with an Agent!</h3>
+					<h3 style="color:white;">Please describe the nature of your issue to the Agent!</h3>
 				</div>
 				<form method="post" action="<?php echo base_url(); ?>chat">
 					<div class="input-with-icon-left">

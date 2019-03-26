@@ -16,7 +16,7 @@ class Tickets extends CI_Controller {
 
 	public function index()
 	{
-		$data['tickets'] = $this->chat_model->getTickes(array('status' => '3'));
+		$data['tickets'] = $this->chat_model->getTickes(array('status' => '1'));
 		$data['type'] = "Completed";
 		$this->load->view('includes/dashboard/header');
 		$this->load->view('includes/dashboard/menu');
@@ -26,7 +26,7 @@ class Tickets extends CI_Controller {
 
 	public function active()
 	{
-		$data['tickets'] = $this->chat_model->getTickes(array('status' => '2'));
+		$data['tickets'] = $this->chat_model->getTickes(array('status' => '1'));
 		$data['type'] = "Active";
 		$this->load->view('includes/dashboard/header');
 		$this->load->view('includes/dashboard/menu');

@@ -20,6 +20,8 @@
 				<nav id="navigation">
 					<ul id="responsive">
 
+						<li><a href="<?php echo base_url(); ?>dashboard"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
+
 						<li><a href="#">Services</a>
 						</li>
 
