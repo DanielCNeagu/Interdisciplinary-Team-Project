@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /*
 We changed code to get the local host server
 */
-$config['base_url'] = 'http://epit.gearhostpreview.com';
+$config['base_url'] = 'http://den1.mysql2.gear.host';
 
 
 
