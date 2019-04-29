@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /*
 We changed code to get the local host server
 */
-$config['base_url'] = 'http://ftp.gear.host';
+$config['base_url'] = 'http://www.epit.gearhostpreview.com/';
 
 
 
