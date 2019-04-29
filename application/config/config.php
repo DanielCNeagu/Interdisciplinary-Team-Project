@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /*
 We changed code to get the local host server
 */
-$config['base_url'] = 'http://localhost/epit';
+$config['base_url'] = 'http://epit.gearhostpreview.com';
 
 
 
