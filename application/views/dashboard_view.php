@@ -1,207 +1,53 @@
-<<<<<<< HEAD
 <!-- Dashboard Headline -->
+	<div class="container">
+		<div class="jumbotron"> 
+			
+			<!-- Dashboard Headline -->
 			<div class="dashboard-headline">
-				<h3>Howdy, <?php echo $this->session->userdata('fname'); ?> <?php echo $this->session->userdata('lname'); ?>!</h3>
-				<span>We are glad to see you again!</span>
-
-				<!-- Breadcrumbs -->
-				<nav id="breadcrumbs" class="dark">
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li>Dashboard</li>
-					</ul>
-				</nav>
-			</div>
+				<h3>Howdy, <?php echo $this->session->userdata('fname'); ?>!, Welcote to Admin Page </h3>
+				<span>We are glad to see you again!</span>				
+			</div>   
 	
 			<!-- Fun Facts Container -->
-			<div class="fun-facts-container">
-				<div class="fun-fact" data-fun-fact-color="#36bd78">
-					<div class="fun-fact-text">
-						<span>Total Tickets</span>
-						<h4>22</h4>
-					</div>
-					<div class="fun-fact-icon"><i class="icon-material-outline-gavel"></i></div>
-				</div>
+			<div class="fun-facts-container">				
 				<div class="fun-fact" data-fun-fact-color="#b81b7f">
-					<div class="fun-fact-text">
+					<a class="fun-fact-text" href="<?php echo base_url(); ?>tickets/active">						
+						<span>Active Tickets</span>
+						<h4><?php echo $active->count; ?></h4>					
+					</a>					
+					<div class="fun-fact-icon"><i class="icon-material-outline-business-center"></i></div>
+				</div>				
+				<div class="fun-fact" data-fun-fact-color="#b81b7f">
+					<a class="fun-fact-text" href="<?php echo base_url(); ?>tickets/index">						
 						<span>Completed Tickets</span>
-						<h4>4</h4>
-					</div>
+						<h4><?php echo $completed->count; ?></h4>					
+					</a>					
 					<div class="fun-fact-icon"><i class="icon-material-outline-business-center"></i></div>
 				</div>
 				<div class="fun-fact" data-fun-fact-color="#efa80f">
-					<div class="fun-fact-text">
-						<span>Total Users</span>
-						<h4>28</h4>
-					</div>
+					<a class="fun-fact-text" href="<?php echo base_url(); ?>tickets/pending">						
+						<span>New Tickets</span>
+						<h4><?php echo $pending->count; ?></h4>					
+					</a>
 					<div class="fun-fact-icon"><i class="icon-material-outline-group"></i></div>
 				</div>
 			</div>
 
-			<!-- Row -->
-			<div class="row">
-				<!-- Dashboard Box -->
-				<div class="col-xl-12">
-					<div class="dashboard-box">
-						<div class="headline">
-							<h3><i class="icon-material-outline-assignment"></i> Recent Tickets</h3>
-						</div>
-						<div class="content">
-							<ul class="dashboard-box-list">
-								<li>
-									<div class="invoice-list-item">
-									<strong>Marius Pal</strong>
-										<ul>
-											<li><span class="unpaid">Pending</span></li>
-											<li>Ticket Number: TN-326</li>
-											<li>Date: 12/08/2018</li>
-										</ul>
-									</div>
-									<!-- Buttons -->
-									<div class="buttons-to-right">
-										<a href="#" class="button">View</a>
-									</div>
-								</li>
-								<li>
-									<div class="invoice-list-item">
-									<strong>Daniel Costel</strong>
-										<ul>
-											<li><span class="unpaid">Pending</span></li>
-											<li>Ticket Number: TN-327</li>
-											<li>Date: 12/08/2018</li>
-										</ul>
-									</div>
-									<!-- Buttons -->
-									<div class="buttons-to-right">
-										<a href="#" class="button">View</a>
-									</div>
-								</li>
-								<li>
-									<div class="invoice-list-item">
-									<strong>Lucian Nechita</strong>
-										<ul>
-											<li><span class="paid">Completed</span></li>
-											<li>Ticket Number: TN-322</li>
-											<li>Date: 12/08/2018</li>
-										</ul>
-									</div>
-									<!-- Buttons -->
-									<div class="buttons-to-right">
-										<a href="#" class="button">View</a>
-									</div>
-								</li>
-								<li>
-									<div class="invoice-list-item">
-									<strong>Keith ForgotHisSurname</strong>
-										<ul>
-											<li><span class="paid">Completed</span></li>
-											<li>Ticket Number: TN-322</li>
-											<li>Date: 12/08/2018</li>
-										</ul>
-									</div>
-									<!-- Buttons -->
-									<div class="buttons-to-right">
-										<a href="#" class="button">View</a>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
+			<br><br><br><br><hr>
+			<p>
+				<strong>
+					Total amount of satisfied customers so far:
+				</strong>
+			</p>
+			<div class="fun-fact" data-fun-fact-color="#36bd78" style="width: 100%; background: #ADD8E6;">
+				<div class="fun-fact-text">
+					<span>Total Tickets</span>
+					<h4><?php echo $active->count + $pending->count + $completed->count; ?> </h4>
 				</div>
-
+				<div class="fun-fact-icon"><i class="icon-material-outline-gavel"></i></div>
 			</div>
-			<!-- Row / End -->
-=======
-<!-- Dashboard Headline -->
-			<div class="dashboard-headline">
-				<h3>Howdy, <?php echo $this->session->userdata('fname'); ?> <?php echo $this->session->userdata('lname'); ?>!</h3>
-				<span>We are glad to see you again!</span>
 
-				<!-- Breadcrumbs -->
-				<nav id="breadcrumbs" class="dark">
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li>Dashboard</li>
-					</ul>
-				</nav>
-			</div>
+		</div>
+	</div>
+			
 	
-			<!-- Fun Facts Container -->
-			<div class="fun-facts-container">
-				<div class="fun-fact" data-fun-fact-color="#36bd78">
-					<div class="fun-fact-text">
-						<span>Total Tickets</span>
-						<h4><?php echo $active->count + $pending->count + $completed->count; ?></h4>
-					</div>
-					<div class="fun-fact-icon"><i class="icon-material-outline-gavel"></i></div>
-				</div>
-				<div class="fun-fact" data-fun-fact-color="#b81b7f">
-					<div class="fun-fact-text">
-						<span>Completed Tickets</span>
-						<h4><?php echo $completed->count; ?></h4>
-					</div>
-					<div class="fun-fact-icon"><i class="icon-material-outline-business-center"></i></div>
-				</div>
-				<div class="fun-fact" data-fun-fact-color="#efa80f">
-					<div class="fun-fact-text">
-						<span>Pending Tickets</span>
-						<h4><?php echo $pending->count; ?></h4>
-					</div>
-					<div class="fun-fact-icon"><i class="icon-material-outline-group"></i></div>
-				</div>
-			</div>
-
-
-			 <div class="row">
-				<div class="col-xl-12">
-					<div class="dashboard-box">
-						<div class="headline">
-							<h3><i class="icon-material-outline-assignment"></i> Recent Tickets</h3>
-						</div>
-						<div class="content">
-							<ul class="dashboard-box-list">
-								<li>
-									<div class="invoice-list-item">
-									<strong>Mario</strong>
-										<ul>
-											<li><span class="unpaid">Pending</span></li>
-											<li>Ticket Number: TN-326</li>
-											<li>Date: 12/08/2018</li>
-										</ul>
-									</div>
-									<div class="buttons-to-right">
-										<a href="#" class="button">View</a>
-									</div>
-								</li>
-								<li>
-									<div class="invoice-list-item">
-									<strong>Jhon</strong>
-										<ul>
-											<li><span class="paid">Completed</span></li>
-											<li>Ticket Number: TN-327</li>
-											<li>Date: 12/08/2018</li>
-										</ul>
-									</div>
-									<div class="buttons-to-right">
-										<a href="#" class="button">View</a>
-									</div>
-								</li>
-								<li>
-									<div class="invoice-list-item">
-									<strong>Daniel Costel</strong>
-										<ul>
-											<li><span class="paid">Completed</span></li>
-											<li>Ticket Number: TN-322</li>
-											<li>Date: 12/08/2018</li>
-										</ul>
-									</div>
-									<div class="buttons-to-right">
-										<a href="#" class="button">View</a>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div> 
->>>>>>> FirstB

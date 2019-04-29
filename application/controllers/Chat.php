@@ -7,10 +7,10 @@ class Chat extends MY_Controller {
 	{
 	    parent::__construct();
 	    
-	    if($this->session->userdata('is_logged_in')!=true) {
-			$this->set_alert('notification', 'You must log in first...', 'error');
-	    	redirect('login');
-	    }
+	    // if($this->session->userdata('is_logged_in')!=false) {
+			// $this->set_alert('notification', 'You must log in first...', 'error');
+	    // 	redirect('login');
+	    // }
 	    $this->load->model('chat_model');
 	}
 
@@ -21,7 +21,7 @@ class Chat extends MY_Controller {
 				'created_by' => $this->session->userdata('user_id'), 
 				'query' => $this->input->post('question')
 				));
-			if($id > 0) {
+			if($id > 0) { 
 				redirect('chat/view/' . $id);
 			}
 		}
@@ -66,10 +66,20 @@ class Chat extends MY_Controller {
 	    	redirect('tickets');
 	    }
 	    $data['chat'] = $this->chat_model->getChat($id);
-		$this->load->view('includes/dashboard/header');
-		$this->load->view('includes/dashboard/menu');
-		$this->load->view('chat_view', $data);
-		$this->load->view('includes/dashboard/footer');
+		if($this->session->userdata('user_type') < 2){
+			$this->load->view('includes/dashboard/header');
+			$this->load->view('includes/dashboard/menu');
+			$this->load->view('chat_view', $data);
+
+		}else{
+			$this->load->view('includes/header');
+			$this->load->view('includes/menu');
+			$this->load->view('customer_view');
+			$this->load->view('chat_view', $data);
+			$this->load->view('includes/dashboard/footer');
+
+
+		}
 	}
 
 	public function close_project($id = NULL) 
@@ -81,10 +91,10 @@ class Chat extends MY_Controller {
 
 
 		if($this->chat_model->close_project($id)) {
-			$this->set_alert('notification', 'Project has been closed...', 'success');
+			$this->set_alert('notification', 'Ticket has been closed...', 'success');
 	    	redirect('chat/view/' . $id);
 	    } else {
-			$this->set_alert('notification', 'Unable to close the project...', 'error');
+			$this->set_alert('notification', 'Unable to close the ticket...', 'error');
 	    	redirect('chat/view/' . $id);
 	    }
 	}

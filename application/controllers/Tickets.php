@@ -11,16 +11,35 @@ class Tickets extends CI_Controller {
 			$this->set_alert('notification', 'You must log in first...', 'error');
 	    	redirect('login');
 	    }
-	    $this->load->model('chat_model');
+			$this->load->model('chat_model');
 	}
 
-	public function index()
+	public function index() 
 	{
 		$data['tickets'] = $this->chat_model->getTickes(array('status' => '3'));
 		$data['type'] = "Completed";
-		$this->load->view('includes/dashboard/header');
-		$this->load->view('includes/dashboard/menu');
-		$this->load->view('tickets_view', $data);
+		if($this->session->userdata('user_type') < 2){
+			$this->load->view('includes/dashboard/header');
+			$this->load->view('includes/dashboard/menu');
+			$this->load->view('tickets_view', $data);
+
+		}else{
+			$this->load->view('includes/header');
+			$this->load->view('includes/menu');
+			$this->load->view('customer_view');
+			$this->load->view('tickets_view', $data);
+			$this->load->view('includes/dashboard/footer');
+		}
+	}
+
+	public function newTicket()
+	{
+		$data['tickets'] = $this->chat_model->getTickes(array('status' => '1'));
+		$data['type'] = "New";
+		$this->load->view('includes/header');
+		$this->load->view('includes/menu');
+		$this->load->view('customer_view');
+		$this->load->view('newTW_view', $data);
 		$this->load->view('includes/dashboard/footer');
 	}
 
@@ -28,19 +47,37 @@ class Tickets extends CI_Controller {
 	{
 		$data['tickets'] = $this->chat_model->getTickes(array('status' => '2'));
 		$data['type'] = "Active";
-		$this->load->view('includes/dashboard/header');
-		$this->load->view('includes/dashboard/menu');
-		$this->load->view('tickets_view', $data);
-		$this->load->view('includes/dashboard/footer');
+
+		if($this->session->userdata('user_type') < 2){
+			$this->load->view('includes/dashboard/header');
+			$this->load->view('includes/dashboard/menu');
+			$this->load->view('tickets_view', $data);
+
+		}else{
+			$this->load->view('includes/header');
+			$this->load->view('includes/menu');
+			$this->load->view('customer_view');
+			$this->load->view('tickets_view', $data);
+			$this->load->view('includes/dashboard/footer');
+		}		
 	}
 
 	public function pending()
 	{
 		$data['tickets'] = $this->chat_model->getTickes(array('status' => '1'));
 		$data['type'] = "Pending";
-		$this->load->view('includes/dashboard/header');
-		$this->load->view('includes/dashboard/menu');
-		$this->load->view('tickets_view', $data);
-		$this->load->view('includes/dashboard/footer');
-	}
+		if($this->session->userdata('user_type') < 2){
+			$this->load->view('includes/dashboard/header');
+			$this->load->view('includes/dashboard/menu');
+			$this->load->view('tickets_view', $data);
+
+		}else{
+			$this->load->view('includes/header');
+			$this->load->view('includes/menu');
+			$this->load->view('customer_view');
+			$this->load->view('tickets_view', $data);
+			$this->load->view('includes/dashboard/footer');
+		}
+	}	
 }
+

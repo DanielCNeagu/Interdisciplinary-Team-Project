@@ -5,13 +5,13 @@
 					<div class="col-xl-12">						
 						<!-- Section Headline -->
 						<div class="section-headline margin-top-0 margin-bottom-35">
-							<h3>Recent Tickets</h3>
+							<h3>Accounts Permissions</h3>
 							<a href="<?php echo base_url(); ?>faq" class="headline-link">Browse Q&A</a>
 						</div>						
 						<!-- Jobs Container -->
 						<div class="listings-container compact-list-layout margin-top-35">						
-							<?php if(count($faqs) > 0) { $x = 1; ?>
-								<?php foreach ($faqs as $faq) { ?>
+							<?php if($users > 0) {  ?>
+								<?php foreach ($users as $user) { ?>
 									<span href="#" class="job-listing with-apply-button">
 										<div class="job-listing-details">
 											<!-- Logo -->
@@ -20,22 +20,26 @@
 											</div>														
 											<!-- Details -->
 											<div class="job-listing-description">
-												<p class="job-listing-title">Ticket Number <?php echo $x++; ?></p>
+												<p class="job-listing-title"></p>
 
 												<!-- Job Listing Footer -->
 												<div class="job-listing-footer">
-													<h2><?php echo $faq->question; ?></h2>
+													<?php if($user->user_type < 2) { ?>
+														<h2>Admin</h2>
+													<?php }else if($user->user_type > 1){ ?>
+														<h2>Normal</h2>
+													<?php } ?>
+													<h3><?php echo $user->lname . " " . $user->fname ?></h3>
 													<ul>														
-														<p data-label="Answer"><?php echo $faq->answer; ?></p>														
-													</ul>													
+														<p data-label="Answer"><?php echo $user->email; ?></p>														
+													</ul>																										
 												</div>												
 											</div>
-											<?php if($this->session->userdata('user_type') < 2){ ?>
-												<a href="<?php echo base_url(); ?>faq/update/<?php echo $faq->id; ?>" class="button ripple-effect" style="width: 75px; margin: 5px;">Edit</a>
-												<a href="<?php echo base_url(); ?>faq/delete/<?php echo $faq->id; ?>" onclick="return confirm('Are you use you want to delete?')" class="button ripple-effect" style="width: 75px; color: black; margin: 5px;">Delete</a>																									
-											<?php } ?>
+											<a href="<?php echo base_url(); ?>user/update/<?php echo $user->id; ?>" class="button ripple-effect" style="width: 75px; margin: 5px;">Edit</a>
+											<a href="<?php echo base_url(); ?>user/delete/<?php echo $user->id; ?>" onclick="return confirm('Are you use you want to delete?')" class="button ripple-effect" style="width: 75px; color: black; margin: 5px;">Delete</a>																													
 										</div>
 									</span>
+									
 								<?php } ?>
 							<?php } ?>							
 						</div>
@@ -45,4 +49,3 @@
 			</div>
 		</div>
 <!-- Featured Jobs / End -->
-			

@@ -22,8 +22,9 @@ class Search extends MY_Controller {
 			$data['result'] = array();
 		}
 
-		$this->load->view('includes/dashboard/header');
-		$this->load->view('includes/dashboard/menu');
+		$this->load->view('includes/header');
+		$this->load->view('includes/menu');
+		$this->load->view('customer_view');
 		$this->load->view('search_view', $data);
 		$this->load->view('includes/dashboard/footer');
 	}

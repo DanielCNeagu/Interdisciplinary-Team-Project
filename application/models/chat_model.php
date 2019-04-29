@@ -3,11 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Chat_model extends CI_Model {
 	
-	// public function add($data)
-	// {
-	// 	$this->db->insert('chat',$data);
-	// 	return $this->db->insert_id();
-	// }
+	 public function add($data)
+	 {
+	 	$this->db->insert('chat',$data);
+	 	return $this->db->insert_id();
+	 }
 	
 	public function addQuery($data)
 	{
@@ -53,8 +53,12 @@ class Chat_model extends CI_Model {
 
 	public function addChat($data) 
 	{
-		$this->db->insert('chat',$data);
-		return $this->db->insert_id();
+		$this->db->where('id', $data['ticket_id']);
+		if ($this->db->update('tickets', array('status' => '2'))) {			
+			$this->db->insert('chat',$data);
+			return $this->db->insert_id();
+		}
+		return false;
 	}
 
 	public function addFeedback($id, $data)

@@ -1,19 +1,34 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+/*
+CodeIgniter code bellow
+*/
 
+defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
-
 $db['default'] = array(
 	'dsn'	=> '',
+
+
+
+	
+/*
+We changed code in order to connect to database
+*/
 	'hostname' => 'localhost',
-	'username' => 'epit0001',
-	'password' => 'Rica8442',
-<<<<<<< HEAD
-	'database' => 'fyp',
-=======
-	'database' => 'mario',
->>>>>>> FirstB
+	'username' => 'root',
+	'password' => '',
+	'database' => 'epit',
+
+
+
+
+
+
+
+/*
+CodeIgniter code bellow
+*/
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

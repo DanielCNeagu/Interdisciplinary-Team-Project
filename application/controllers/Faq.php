@@ -18,10 +18,25 @@ class Faq extends MY_Controller {
 	public function index()
 	{
 		$data['faqs'] = $this->faq_model->getAll();
-		$this->load->view('includes/dashboard/header');
-		$this->load->view('includes/dashboard/menu');
-		$this->load->view('faq/view', $data);
-		$this->load->view('includes/dashboard/footer');
+		
+
+		if($this->session->userdata('user_type') < 2){
+
+			$this->load->view('includes/dashboard/header');
+			$this->load->view('includes/dashboard/menu');
+			$this->load->view('faq/view', $data);
+			$this->load->view('faq/add');
+		}else{
+
+			$this->load->view('includes/header');
+			$this->load->view('includes/menu');
+			$this->load->view('customer_view');
+			$this->load->view('faq/view', $data);
+			$this->load->view('includes/dashboard/footer');
+
+		}
+
+		
 	}
 
 	public function add()
@@ -34,7 +49,7 @@ class Faq extends MY_Controller {
 			$this->load->view('includes/dashboard/header');
 			$this->load->view('includes/dashboard/menu');
 			$this->load->view('faq/add');
-			$this->load->view('includes/dashboard/footer');
+			
 		}
 		else
 		{
@@ -71,7 +86,6 @@ class Faq extends MY_Controller {
 			$this->load->view('includes/dashboard/header');
 			$this->load->view('includes/dashboard/menu');
 			$this->load->view('faq/update', $data);
-			$this->load->view('includes/dashboard/footer');
 		}
 		else
 		{
