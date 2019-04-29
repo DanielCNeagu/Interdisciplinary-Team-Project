@@ -15,9 +15,9 @@ $db['default'] = array(
 /*
 We changed code in order to connect to database
 */
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => 'den1.mysql2.gear.host',
+	'username' => 'epit',
+	'password' => 'epit!!',
 	'database' => 'epit',
 
 
