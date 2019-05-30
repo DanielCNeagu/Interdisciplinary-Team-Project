@@ -27,4 +27,4 @@ Marius Pal      x17132665
 
 5. Log out will directly redirect the user to the main page. 
 
-6. Online version at: https://epit001.000webhostapp.com/
+6. Online version at: **https://epit001.000webhostapp.com/** and follow instructions on the login page
