@@ -16,11 +16,12 @@ Marius Pal      x17132665
 
 1. Create a database in phpmyadmin and impport epit.sql file given in the zip folder. 
 
-2. Admin login and user login can be done through the same page. Login credentials: User dreams@yahoo.com Password 12345
+2. Create two accounts trough the Register page, one for admin, one for customer. Go back into the database and change admin account type    to " 1 ", this will give administrator access to the system.
 
-3. User sign up option is also available at the main page i.e. 
+3. Use two different browsers to log in as both admin and user at the same time
 
-4. Log out will directly redirect the user to the main page. 
+4. Use the system as you please
 
-5. application/database.php contains the data for the connection of the localhost to the database of phpmyadmin. Login credentials for phpmyadmin can be restructured there as well. WHere user types are 1 : for admin 
-                                                    2 : for user.
+5. Log out will directly redirect the user to the main page. 
+
+6. Online version at: https://epit001.000webhostapp.com/
