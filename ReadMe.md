@@ -1,8 +1,11 @@
 **The Team:**
 
 Lucian Nechita  x16149505
+
 Keith Redmon    x15003990
+
 Daniel Costel   x17128463
+
 Marius Pal      x17132665
 
 
